@@ -20,7 +20,7 @@ export function Navbar(props: NavbarProps) {
         <Toolbar disableGutters={true}>
           <Image
             src="/images/logo.png"
-            alt="Picture of the author"
+            alt="Navbar logo"
             width={116}
             height={81}
           />

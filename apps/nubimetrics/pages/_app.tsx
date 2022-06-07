@@ -23,7 +23,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
         <title>Welcome to nubimetrics!</title>
         <link
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+          href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700&display=swap"
         />
       </Head>
       <main className="app">
