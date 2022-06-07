@@ -1,14 +1,12 @@
+import { Typography } from '@mui/material';
 import styles from './index.module.scss';
 
-export function Index() {
-  /*
-   * Replace the elements below with your own.
-   *
-   * Note: The corresponding styles are in the ./index.scss file.
-   */
+export function Index(): JSX.Element {
   return (
     <div className={styles.page}>
-      <h1>Nubrimetics</h1>
+      <Typography variant="h1" component="h2">
+        Welcome to Home!
+      </Typography>
     </div>
   );
 }
