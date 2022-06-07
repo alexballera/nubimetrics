@@ -1,7 +1,10 @@
 // Base
-import Navbar from '../navbar/navbar';
 import { PropsWithChildren } from 'react';
 // Base end
+
+// Own components
+import Navbar from '../navbar/navbar';
+// Own components end
 
 // Styles
 import styles from './layout.module.scss';

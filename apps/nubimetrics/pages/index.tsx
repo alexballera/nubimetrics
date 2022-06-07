@@ -1,5 +1,5 @@
-import { Typography } from '@mui/material';
 import styles from './index.module.scss';
+import { Typography } from '@mui/material';
 
 export function Index(): JSX.Element {
   return (
