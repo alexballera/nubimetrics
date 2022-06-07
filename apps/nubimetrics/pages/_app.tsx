@@ -26,13 +26,13 @@ function CustomApp({ Component, pageProps }: AppProps) {
           href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700&display=swap"
         />
       </Head>
-      <main className="app">
-        <ThemeProvider theme={theme}>
+      <ThemeProvider theme={theme}>
+        <main className="app">
           <Layout>
             <Component {...pageProps} />
           </Layout>
-        </ThemeProvider>
-      </main>
+        </main>
+      </ThemeProvider>
     </>
   );
 }

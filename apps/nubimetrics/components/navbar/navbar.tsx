@@ -3,30 +3,24 @@ import Image from 'next/image';
 // Base end
 
 // MUI
-import { AppBar, Toolbar } from '@mui/material';
+import { AppBar, Box, Toolbar } from '@mui/material';
 // MUI END
 
-// Styles
-import styles from './navbar.module.scss';
-// Styles end
-
-/* eslint-disable-next-line */
-export interface NavbarProps {}
-
-export function Navbar(props: NavbarProps) {
+export function Navbar(): JSX.Element {
   return (
-    <div className={styles['container']}>
-      <AppBar position="sticky" color="inherit" elevation={0}>
-        <Toolbar disableGutters={true}>
+    <AppBar position="sticky" color="inherit" elevation={0}>
+      <Toolbar disableGutters={true}>
+        <Box sx={{ width: 116, height: 81 }}>
           <Image
             src="/images/logo.png"
             alt="Navbar logo"
             width={116}
             height={81}
+            layout="responsive"
           />
-        </Toolbar>
-      </AppBar>
-    </div>
+        </Box>
+      </Toolbar>
+    </AppBar>
   );
 }
 
