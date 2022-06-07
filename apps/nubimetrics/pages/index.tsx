@@ -1,5 +1,10 @@
-import styles from './index.module.scss';
+// MUI
 import { Typography } from '@mui/material';
+// MUI end
+
+// Styles
+import styles from './index.module.scss';
+// Styles end
 
 export function Index(): JSX.Element {
   return (

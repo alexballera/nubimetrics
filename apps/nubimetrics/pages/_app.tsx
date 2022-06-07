@@ -1,11 +1,20 @@
+// Base
 import { AppProps } from 'next/app';
 import Head from 'next/head';
-/// MUI COMPONENTS
+// Base end
+
+// MUI
 import { ThemeProvider } from '@mui/material';
-/// MUI COMPONENTS END
-import './styles.css';
-import theme from '../styles/ts/theme';
+// MUI END
+
+// Own Components
 import Layout from '../components/layout/layout';
+// Own Components end
+
+// Styles
+import theme from '../styles/ts/theme';
+import './styles.css';
+// Styles end
 
 function CustomApp({ Component, pageProps }: AppProps) {
   return (

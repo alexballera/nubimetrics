@@ -1,8 +1,14 @@
-/// MATERIAL UI
-import { AppBar, Toolbar } from '@mui/material';
+// Base
 import Image from 'next/image';
-/// MATERIAL UI END
+// Base end
+
+// MUI
+import { AppBar, Toolbar } from '@mui/material';
+// MUI END
+
+// Styles
 import styles from './navbar.module.scss';
+// Styles end
 
 /* eslint-disable-next-line */
 export interface NavbarProps {}
