@@ -47,6 +47,8 @@ export function Layout(props: PropsWithChildren<LayoutProps>): JSX.Element {
     contentContainer: {
       mt: navbarHeight / 8,
       width: '100%',
+      py: 32 / 8,
+      px: 48 / 8,
       [theme.breakpoints.up('md')]: {
         height: innerHeight,
         width: `calc(100% - ${innerHeight * ratio}px)`,
