@@ -1,10 +1,9 @@
 // Base
-import Image from 'next/image';
-import { PropsWithChildren } from 'react';
+import { PropsWithChildren, useEffect, useState } from 'react';
 // Base end
 
 // MUI
-import { Box, Grid, styled } from '@mui/material';
+import { Box, Grid } from '@mui/material';
 // MUI end
 
 // Styles
@@ -23,52 +22,56 @@ export interface LayoutProps {
   children?: JSX.Element;
 }
 
-const Content = styled(Grid)({
-  paddingTop: navbarHeight,
-  width: '100%',
-  [theme.breakpoints.up('sm')]: {
-    width: `calc(100% - ${sidebarWidth}px)`,
-  },
-});
+const ratio = sidebarWidth / sidebarHeight;
 
 export function Layout(props: PropsWithChildren<LayoutProps>): JSX.Element {
   const { children } = props;
+  const [innerHeight, setInnerHeight] = useState(0);
+
+  useEffect(() => {
+    const heigth = window.innerHeight;
+    setInnerHeight(heigth - navbarHeight);
+  }, []);
+
+  const styles = {
+    bannerContainer: {
+      mt: navbarHeight / 8,
+      display: { xs: 'none', md: 'block' },
+      width: innerHeight * ratio,
+      height: innerHeight,
+      '& img': {
+        position: 'fixed',
+        width: innerHeight * ratio,
+      },
+    },
+    contentContainer: {
+      mt: navbarHeight / 8,
+      width: '100%',
+      [theme.breakpoints.up('md')]: {
+        height: innerHeight,
+        width: `calc(100% - ${innerHeight * ratio}px)`,
+        overflowY: 'auto',
+      },
+    },
+  };
+
   return (
     <Box>
       <Navbar />
       <Grid container direction="row">
-        <Grid item>
-          <Box
-            sx={{
-              display: { xs: 'none', sm: 'block' },
-              mt: navbarHeight / 8,
-            }}
-          >
-            <Image
+        <Grid item sx={styles.bannerContainer}>
+          <Box component="div">
+            <img
               src="/images/banner.png"
+              srcSet="/images/banner.png"
               alt="Banner sidebar"
-              width={sidebarWidth}
-              height={sidebarHeight}
+              loading="lazy"
             />
           </Box>
         </Grid>
-        <Content
-          item
-          sx={{
-            height: navbarHeight,
-          }}
-        >
-          <Box
-            component="div"
-            sx={{
-              width: '100%',
-              height: sidebarHeight,
-              overflowY: 'auto',
-            }}
-          >
-            {children}
-          </Box>
-        </Content>
+        <Grid item sx={styles.contentContainer}>
+          {children}
+        </Grid>
       </Grid>
     </Box>
   );
