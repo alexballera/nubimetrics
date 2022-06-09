@@ -4,7 +4,9 @@ import { Typography } from '@mui/material';
 
 // Own components
 import CustomTextField from 'components/custom-text-field/custom-text-field';
+import SelectRadioButton from 'components/select-radio-button/select-radio-button';
 // Own components end
+
 // Styles
 import styles from './index.module.scss';
 // Styles end
@@ -21,6 +23,8 @@ export function Index(): JSX.Element {
       </Typography>
 
       <CustomTextField type="search" size="small" placeholder="Buscador" />
+
+      <SelectRadioButton />
     </div>
   );
 }
