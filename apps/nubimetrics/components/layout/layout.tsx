@@ -1,4 +1,5 @@
 // Base
+import Image from 'next/image';
 import { PropsWithChildren, useEffect, useState } from 'react';
 // Base end
 
@@ -62,14 +63,14 @@ export function Layout(props: PropsWithChildren<LayoutProps>): JSX.Element {
       <Navbar />
       <Grid container direction="row">
         <Grid item sx={styles.bannerContainer}>
-          <Box component="div">
-            <img
-              src="/images/banner.png"
-              srcSet="/images/banner.png"
-              alt="Banner sidebar"
-              loading="lazy"
-            />
-          </Box>
+          <Image
+            src="/images/banner.png"
+            alt="Banner sidebar"
+            loading="lazy"
+            width={innerHeight * ratio}
+            height={innerHeight}
+            layout="responsive"
+          />
         </Grid>
         <Grid item sx={styles.contentContainer}>
           {children}
