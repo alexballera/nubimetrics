@@ -19,7 +19,9 @@ const MenuProps = {
   },
 };
 
-const names = ['Todos', 'Activos', 'Inactivos'];
+interface SelectRadioButtonProps {
+  items: string[];
+}
 
 const StiledOutlinedInput = styled(OutlinedInput)(
   () => `
@@ -33,12 +35,13 @@ const StiledOutlinedInput = styled(OutlinedInput)(
   & .MuiSelect-select {
     font-weight: bold;
     padding-left: 16px;
-    width: 70%;
+    width: 48%;
   }
   `
 );
 
-export default function SelectRadioButton() {
+export default function SelectRadioButton(props: SelectRadioButtonProps) {
+  const { items } = props;
   const [cookedBefore, setCookedBefore] = useState<string[]>([]);
 
   const handleChange = (event: SelectChangeEvent<typeof cookedBefore>) => {
@@ -63,10 +66,10 @@ export default function SelectRadioButton() {
       renderValue={(selected) => selected.join(', ')}
       MenuProps={MenuProps}
     >
-      {names.map((name) => (
-        <MenuItem key={name} value={name}>
-          <ListItemText primary={name} />
-          <Radio checked={cookedBefore.indexOf(name) > -1} />
+      {items.map((item) => (
+        <MenuItem key={item} value={item}>
+          <ListItemText primary={item} />
+          <Radio checked={cookedBefore.indexOf(item) > -1} />
         </MenuItem>
       ))}
     </Select>

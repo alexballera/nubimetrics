@@ -1,5 +1,5 @@
 // MUI
-import { Typography } from '@mui/material';
+import { Grid, Typography } from '@mui/material';
 // MUI end
 
 // Own components
@@ -7,13 +7,11 @@ import CustomTextField from 'components/custom-text-field/custom-text-field';
 import SelectRadioButton from 'components/select-radio-button/select-radio-button';
 // Own components end
 
-// Styles
-import styles from './index.module.scss';
-// Styles end
+const items = ['Todos', 'Activos', 'Inactivos'];
 
 export function Index(): JSX.Element {
   return (
-    <div className={styles.page}>
+    <>
       <Typography
         component="h2"
         variant="h2"
@@ -21,11 +19,15 @@ export function Index(): JSX.Element {
       >
         Recetas de Cocina
       </Typography>
-
-      <CustomTextField type="search" size="small" placeholder="Buscador" />
-
-      <SelectRadioButton />
-    </div>
+      <Grid container spacing={2} alignItems="center">
+        <Grid item xs={12} md={5.5}>
+          <CustomTextField type="search" size="small" placeholder="Buscador" />
+        </Grid>
+        <Grid item xs={12} md={4}>
+          <SelectRadioButton items={items} />
+        </Grid>
+      </Grid>
+    </>
   );
 }
 
