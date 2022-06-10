@@ -1,10 +1,12 @@
 // Base
-import { useEffect, useState } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
 // Base End
 
 // MUI
 import {
   CircularProgress,
+  FormControlLabel,
+  FormGroup,
   Rating,
   Stack,
   styled,
@@ -24,6 +26,7 @@ import { getRecipes } from 'services/recipe.service';
 
 // Styles
 import { recipesStyles } from './recipes.module';
+import IOSSwitch from 'components/ios-switch/ios-switch';
 // Styles end
 
 const StiledRating = styled(Rating)(
@@ -46,12 +49,19 @@ export interface RecipesProps {
 export function Recipes() {
   const [recipes, setRecipes] = useState<RecipesProps[]>();
   const [loading, setLoading] = useState<boolean>();
+  const [checked, setChecked] = useState(true);
+
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setChecked(!event.target.checked);
+    console.log(checked);
+  };
 
   useEffect(() => {
     setLoading(true);
     getRecipes()
       .then((res) => {
-        setRecipes(res.data.recipes);
+        const recipes = res.data.recipes;
+        setRecipes(recipes);
       })
       .catch((err) => console.error(err))
       .finally(() => setLoading(false));
@@ -106,7 +116,14 @@ export function Recipes() {
                       : recipesStyles.tbodyCellInactive
                   }
                 >
-                  {recipe.cooked ? 'True' : 'False'}
+                  <FormGroup>
+                    <IOSSwitch
+                      sx={{ m: 1 }}
+                      checked={recipe.cooked}
+                      name={recipe.name}
+                      onChange={handleChange}
+                    />
+                  </FormGroup>
                 </TableCell>
               </TableRow>
             ))}

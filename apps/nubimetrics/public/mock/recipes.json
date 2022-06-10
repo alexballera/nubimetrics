@@ -8,7 +8,7 @@
 		{
 			"name": "Sopa tailandesa de coliflor al curry rojo",
 			"reviews": 3,
-			"cooked": false
+			"cooked": true
 		},
 		{
 			"name": "Berenjena especiada crujiente",
@@ -23,7 +23,7 @@
 		{
 			"name": "Ensalada de tofu carbonizado, maíz y espárragos",
 			"reviews": 1,
-			"cooked": true
+			"cooked": false
 		},
 		{
 			"name": "Pollo al pesto cremoso en una sartén y ñoquis",
@@ -48,7 +48,7 @@
 		{
 			"name": "Lasaña de calabaza, espinacas y lentejas",
 			"reviews": 4,
-			"cooked": false
+			"cooked": true
 		},
 		{
 			"name": "Soothing chicken soup",
@@ -63,7 +63,7 @@
 		{
 			"name": "Enchiladas rapidas de carne",
 			"reviews": 2,
-			"cooked": true
+			"cooked": false
 		},
 		{
 			"name": "Pollo al disco con champignones",

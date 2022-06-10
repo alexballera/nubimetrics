@@ -4,7 +4,13 @@ import { useState } from 'react';
 
 // MUI
 import Select, { SelectChangeEvent } from '@mui/material/Select';
-import { ListItemText, MenuItem, OutlinedInput, Radio } from '@mui/material';
+import {
+  ListItemText,
+  MenuItem,
+  OutlinedInput,
+  Radio,
+  useMediaQuery,
+} from '@mui/material';
 import { styled } from '@mui/system';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 // MUI end
@@ -23,25 +29,38 @@ const MenuProps = {
 
 const items = ['Todos', 'Activos', 'Inactivos'];
 
-const StiledOutlinedInput = styled(OutlinedInput)(
-  () => `
-  border-radius: 16px;
-  background-color: #EBF0F3;
-
-  & .MuiOutlinedInput-notchedOutline {
-    border: 0;
-  }
-
-  & .MuiSelect-select {
-    font-weight: bold;
-    padding-left: 16px;
-    width: 48%;
-  }
-  `
-);
-
 export default function SelectRadioButton() {
+  const min470 = useMediaQuery('(min-width: 470px && max-width: 568px)');
+  const min568 = useMediaQuery('(min-width: 568px)');
+  const min900 = useMediaQuery('(min-width: 900px && max-width: 1440px)');
+  const min1440 = useMediaQuery('(min-width: 1440px)');
   const [list, setList] = useState<string[]>(['Todos']);
+
+  const StiledOutlinedInput = styled(OutlinedInput)(
+    () => `
+    border-radius: 16px;
+    background-color: #EBF0F3;
+
+    & .MuiOutlinedInput-notchedOutline {
+      border: 0;
+    }
+
+    & .MuiSelect-select {
+      font-weight: bold;
+      padding-left: 16px;
+      width: ${
+        min470
+          ? '52%'
+          : min568
+          ? '64%'
+          : min900
+          ? '47%'
+          : min1440
+          ? '56%'
+          : '48%'
+      };
+    }`
+  );
 
   const handleChange = (event: SelectChangeEvent<typeof list>) => {
     const {
