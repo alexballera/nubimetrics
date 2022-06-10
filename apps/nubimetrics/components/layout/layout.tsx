@@ -66,10 +66,10 @@ export function Layout(props: PropsWithChildren<LayoutProps>): JSX.Element {
           <Image
             src="/images/banner.png"
             alt="Banner sidebar"
-            loading="lazy"
             width={innerHeight * ratio}
             height={innerHeight}
             layout="responsive"
+            priority
           />
         </Grid>
         <Grid item sx={styles.contentContainer}>

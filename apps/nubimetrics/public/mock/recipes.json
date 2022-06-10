@@ -1,0 +1,84 @@
+{
+	"recipes": [
+		{
+			"name": "Melodía de bayas mixtas",
+			"reviews": 3,
+			"cooked": true
+		},
+		{
+			"name": "Sopa tailandesa de coliflor al curry rojo",
+			"reviews": 3,
+			"cooked": false
+		},
+		{
+			"name": "Berenjena especiada crujiente",
+			"reviews": 2,
+			"cooked": true
+		},
+		{
+			"name": "Sopa de calabaza con un toque",
+			"reviews": 4,
+			"cooked": false
+		},
+		{
+			"name": "Ensalada de tofu carbonizado, maíz y espárragos",
+			"reviews": 1,
+			"cooked": true
+		},
+		{
+			"name": "Pollo al pesto cremoso en una sartén y ñoquis",
+			"reviews": 5,
+			"cooked": false
+		},
+		{
+			"name": "Pastel de pollo cremoso",
+			"reviews": 1,
+			"cooked": true
+		},
+		{
+			"name": "Pollo y papas a la francesa",
+			"reviews": 3,
+			"cooked": false
+		},
+		{
+			"name": "Estofado de ternera y verduras",
+			"reviews": 2,
+			"cooked": true
+		},
+		{
+			"name": "Lasaña de calabaza, espinacas y lentejas",
+			"reviews": 4,
+			"cooked": false
+		},
+		{
+			"name": "Soothing chicken soup",
+			"reviews": 5,
+			"cooked": true
+		},
+		{
+			"name": "Sopa de pollo calmante",
+			"reviews": 2,
+			"cooked": false
+		},
+		{
+			"name": "Enchiladas rapidas de carne",
+			"reviews": 2,
+			"cooked": true
+		},
+		{
+			"name": "Pollo al disco con champignones",
+			"reviews": 1,
+			"cooked": false
+		},
+		{
+			"name": "Horneado de brócoli con queso",
+			"reviews": 3,
+			"cooked": true
+		},
+		{
+			"name": "Ragú de pierna de cordero con pappardelle",
+			"reviews": 5,
+			"cooked": false
+		}
+	]
+}

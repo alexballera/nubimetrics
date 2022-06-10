@@ -44,13 +44,13 @@ const StiledOutlinedInput = styled(OutlinedInput)(
 
 export default function SelectRadioButton(props: SelectRadioButtonProps) {
   const { items } = props;
-  const [cookedBefore, setCookedBefore] = useState<string[]>([]);
+  const [list, setList] = useState<string[]>([]);
 
-  const handleChange = (event: SelectChangeEvent<typeof cookedBefore>) => {
+  const handleChange = (event: SelectChangeEvent<typeof list>) => {
     const {
       target: { value },
     } = event;
-    setCookedBefore(
+    setList(
       // On autofill we get a stringified value.
       typeof value === 'string' ? value.split(',') : value
     );
@@ -61,17 +61,17 @@ export default function SelectRadioButton(props: SelectRadioButtonProps) {
       labelId="radio-button-label"
       id="radio-button"
       autoWidth
-      value={cookedBefore}
+      value={list}
       onChange={handleChange}
       IconComponent={KeyboardArrowDownIcon}
       input={<StiledOutlinedInput fullWidth startAdornment="Cocido antes:" />}
       renderValue={(selected) => selected.join(', ')}
       MenuProps={MenuProps}
     >
-      {items.map((item) => (
-        <MenuItem key={item} value={item}>
+      {items.map((item, key) => (
+        <MenuItem key={key} value={item}>
           <ListItemText primary={item} />
-          <Radio checked={cookedBefore.indexOf(item) > -1} />
+          <Radio checked={list.indexOf(item) > -1} />
         </MenuItem>
       ))}
     </Select>
