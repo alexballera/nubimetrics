@@ -1,3 +1,8 @@
+// Base
+import { useEffect, useState } from 'react';
+// Base End
+
+// MUI
 import {
   CircularProgress,
   Stack,
@@ -8,36 +13,21 @@ import {
   TableHead,
   TableRow,
 } from '@mui/material';
-import { useEffect, useState } from 'react';
-import { getRecipes } from 'services/recipe.service';
+// MUI end
 
-/* eslint-disable-next-line */
+// Services
+import { getRecipes } from 'services/recipe.service';
+// Services end
+
+// Styles
+import { recipesStyles } from './recipes.module';
+// Styles end
+
 export interface RecipesProps {
   name: string;
   reviews: number;
   cooked: boolean;
 }
-
-const styles = {
-  theadCell: {
-    color: '#79797A',
-    fontWeight: 600,
-    fontSize: 12,
-    lineHeight: '16px',
-  },
-  tbodyCell: {
-    color: '#19191A',
-    fontWeight: 400,
-    fontSize: 14,
-    lineHeight: '24px',
-  },
-  tbodyCellInactive: {
-    color: '#79797A',
-    fontWeight: 400,
-    fontSize: 14,
-    lineHeight: '24px',
-  },
-};
 
 export function Recipes() {
   const [recipes, setRecipes] = useState<RecipesProps[]>();
@@ -58,9 +48,11 @@ export function Recipes() {
       <Table aria-label="simple table" size="small" stickyHeader>
         <TableHead>
           <TableRow>
-            <TableCell sx={styles.theadCell}>Nombre de la receta</TableCell>
-            <TableCell sx={styles.theadCell}>Reseñas</TableCell>
-            <TableCell sx={styles.theadCell}>Cocinado antes</TableCell>
+            <TableCell sx={recipesStyles.theadCell}>
+              Nombre de la receta
+            </TableCell>
+            <TableCell sx={recipesStyles.theadCell}>Reseñas</TableCell>
+            <TableCell sx={recipesStyles.theadCell}>Cocinado antes</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -72,21 +64,27 @@ export function Recipes() {
               >
                 <TableCell
                   sx={
-                    recipe.cooked ? styles.tbodyCell : styles.tbodyCellInactive
+                    recipe.cooked
+                      ? recipesStyles.tbodyCell
+                      : recipesStyles.tbodyCellInactive
                   }
                 >
                   {recipe.name}
                 </TableCell>
                 <TableCell
                   sx={
-                    recipe.cooked ? styles.tbodyCell : styles.tbodyCellInactive
+                    recipe.cooked
+                      ? recipesStyles.tbodyCell
+                      : recipesStyles.tbodyCellInactive
                   }
                 >
                   {recipe.reviews}
                 </TableCell>
                 <TableCell
                   sx={
-                    recipe.cooked ? styles.tbodyCell : styles.tbodyCellInactive
+                    recipe.cooked
+                      ? recipesStyles.tbodyCell
+                      : recipesStyles.tbodyCellInactive
                   }
                 >
                   {recipe.cooked ? 'True' : 'False'}
