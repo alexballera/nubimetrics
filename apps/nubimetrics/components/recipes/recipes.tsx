@@ -5,7 +5,9 @@ import { useEffect, useState } from 'react';
 // MUI
 import {
   CircularProgress,
+  Rating,
   Stack,
+  styled,
   Table,
   TableBody,
   TableCell,
@@ -13,6 +15,7 @@ import {
   TableHead,
   TableRow,
 } from '@mui/material';
+import StarIcon from '@mui/icons-material/Star';
 // MUI end
 
 // Services
@@ -22,6 +25,17 @@ import { getRecipes } from 'services/recipe.service';
 // Styles
 import { recipesStyles } from './recipes.module';
 // Styles end
+
+const StiledRating = styled(Rating)(
+  () => `
+  & .MuiRating-icon {
+    color: #FFD19A;
+  }
+  & .MuiRating-iconEmpty {
+    color: #E9DBCB;
+  }
+  `
+);
 
 export interface RecipesProps {
   name: string;
@@ -78,7 +92,12 @@ export function Recipes() {
                       : recipesStyles.tbodyCellInactive
                   }
                 >
-                  {recipe.reviews}
+                  <StiledRating
+                    name="read-only"
+                    value={recipe.reviews}
+                    readOnly
+                    emptyIcon={<StarIcon fontSize="inherit" />}
+                  />
                 </TableCell>
                 <TableCell
                   sx={

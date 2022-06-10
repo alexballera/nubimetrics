@@ -59,7 +59,7 @@ export function Layout(props: PropsWithChildren<LayoutProps>): JSX.Element {
   };
 
   return (
-    <Box>
+    <>
       <Navbar />
       <Grid container direction="row">
         <Grid item sx={styles.bannerContainer}>
@@ -76,7 +76,7 @@ export function Layout(props: PropsWithChildren<LayoutProps>): JSX.Element {
           {children}
         </Grid>
       </Grid>
-    </Box>
+    </>
   );
 }
 
