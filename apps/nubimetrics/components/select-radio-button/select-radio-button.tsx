@@ -31,8 +31,7 @@ const items = ['Todos', 'Activos', 'Inactivos'];
 
 export default function SelectRadioButton() {
   const min470 = useMediaQuery('(min-width: 470px && max-width: 568px)');
-  const min568 = useMediaQuery('(min-width: 568px)');
-  const min900 = useMediaQuery('(min-width: 900px && max-width: 1440px)');
+  const min568 = useMediaQuery('(min-width: 568px && max-width: 900px)');
   const min1440 = useMediaQuery('(min-width: 1440px)');
   const [list, setList] = useState<string[]>(['Todos']);
 
@@ -48,17 +47,7 @@ export default function SelectRadioButton() {
     & .MuiSelect-select {
       font-weight: bold;
       padding-left: 16px;
-      width: ${
-        min470
-          ? '52%'
-          : min568
-          ? '64%'
-          : min900
-          ? '47%'
-          : min1440
-          ? '56%'
-          : '48%'
-      };
+      width: ${min470 ? '52%' : min568 ? '64%' : min1440 ? '56%' : '48%'};
     }`
   );
 
