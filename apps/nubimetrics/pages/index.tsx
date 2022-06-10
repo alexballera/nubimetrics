@@ -1,5 +1,6 @@
 // MUI
-import { Grid, Typography } from '@mui/material';
+import { Fab, Grid, Typography } from '@mui/material';
+import AddIcon from '@mui/icons-material/Add';
 // MUI end
 
 // Own components
@@ -7,6 +8,12 @@ import CustomTextField from 'components/custom-text-field/custom-text-field';
 import Recipes from 'components/recipes/recipes';
 import SelectRadioButton from 'components/select-radio-button/select-radio-button';
 // Own components end
+
+const fabStyle = {
+  position: 'absolute',
+  bottom: 24,
+  right: 48,
+};
 
 export function Index(): JSX.Element {
   return (
@@ -30,6 +37,9 @@ export function Index(): JSX.Element {
           <Recipes />
         </Grid>
       </Grid>
+      <Fab sx={fabStyle} color="primary" aria-label="add">
+        <AddIcon />
+      </Fab>
     </>
   );
 }

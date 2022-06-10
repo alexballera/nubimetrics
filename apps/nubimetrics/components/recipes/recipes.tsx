@@ -5,7 +5,6 @@ import { ChangeEvent, useEffect, useState } from 'react';
 // MUI
 import {
   CircularProgress,
-  FormControlLabel,
   FormGroup,
   Rating,
   Stack,
@@ -31,6 +30,7 @@ import IOSSwitch from 'components/ios-switch/ios-switch';
 
 const StiledRating = styled(Rating)(
   () => `
+  display: flex;
   & .MuiRating-icon {
     color: #FFD19A;
   }

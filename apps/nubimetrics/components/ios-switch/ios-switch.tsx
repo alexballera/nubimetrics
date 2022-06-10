@@ -6,13 +6,16 @@ const IOSSwitch = styled((props: SwitchProps) => (
   width: 48,
   height: 24,
   padding: 0,
+  margin: 0,
   '& .MuiSwitch-switchBase': {
     padding: 0,
-    top: '2.7px',
+    top: '2.9px',
+    left: '2px',
     transitionDuration: '300ms',
     '&.Mui-checked': {
       transform: 'translateX(30px)',
       color: '#fff',
+      left: '-2px',
       '& + .MuiSwitch-track': {
         backgroundColor: theme.palette.mode === 'dark' ? '#8DC63F' : '#8DC63F',
         opacity: 1,
