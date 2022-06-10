@@ -21,9 +21,7 @@ const MenuProps = {
   },
 };
 
-interface SelectRadioButtonProps {
-  items: string[];
-}
+const items = ['Todos', 'Activos', 'Inactivos'];
 
 const StiledOutlinedInput = styled(OutlinedInput)(
   () => `
@@ -42,9 +40,8 @@ const StiledOutlinedInput = styled(OutlinedInput)(
   `
 );
 
-export default function SelectRadioButton(props: SelectRadioButtonProps) {
-  const { items } = props;
-  const [list, setList] = useState<string[]>([]);
+export default function SelectRadioButton() {
+  const [list, setList] = useState<string[]>(['Todos']);
 
   const handleChange = (event: SelectChangeEvent<typeof list>) => {
     const {

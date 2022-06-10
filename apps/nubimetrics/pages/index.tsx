@@ -8,8 +8,6 @@ import Recipes from 'components/recipes/recipes';
 import SelectRadioButton from 'components/select-radio-button/select-radio-button';
 // Own components end
 
-const items = ['Todos', 'Activos', 'Inactivos'];
-
 export function Index(): JSX.Element {
   return (
     <>
@@ -25,7 +23,7 @@ export function Index(): JSX.Element {
           <CustomTextField type="search" size="small" placeholder="Buscador" />
         </Grid>
         <Grid item xs={12} md={4}>
-          <SelectRadioButton items={items} />
+          <SelectRadioButton />
         </Grid>
 
         <Grid item xs={12}>

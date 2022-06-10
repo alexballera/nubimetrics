@@ -1,10 +1,10 @@
 // Base
-import Image from 'next/image';
 import { PropsWithChildren, useEffect, useState } from 'react';
+import Image from 'next/image';
 // Base end
 
 // MUI
-import { Box, Grid } from '@mui/material';
+import { Grid } from '@mui/material';
 // MUI end
 
 // Styles
