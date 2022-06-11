@@ -9,11 +9,6 @@ import Title from '../title/title';
 
 // Styles
 const styles = {
-  fab: {
-    position: 'absolute',
-    bottom: 24,
-    right: 48,
-  },
   modalContainer: {
     position: 'absolute',
     top: 0,
@@ -33,14 +28,15 @@ const styles = {
 
 // Types
 export interface CustomModalProps {
+  content: React.ReactElement;
   open: boolean;
   setOpen: (a: boolean) => void;
-  content: React.ReactElement;
+  title: string;
 }
 // Types end
 
 export function CustomModal(props: CustomModalProps) {
-  const { open, setOpen, content } = props;
+  const { open, setOpen, content, title } = props;
 
   const handleClose = () => {
     setOpen(false);
@@ -61,7 +57,7 @@ export function CustomModal(props: CustomModalProps) {
           <CloseIcon />
         </IconButton>
 
-        <Title text="Nueva receta" type="modal" />
+        <Title text={title} type="modal" />
 
         {content}
       </Box>

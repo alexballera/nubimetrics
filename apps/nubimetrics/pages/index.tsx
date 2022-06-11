@@ -64,7 +64,12 @@ export function Index(): JSX.Element {
         </StiledFab>
       </Tooltip>
 
-      <Modal open={open} setOpen={setOpen} content={<NewRecipe />} />
+      <Modal
+        title="Nueva receta"
+        open={open}
+        setOpen={setOpen}
+        content={<NewRecipe />}
+      />
     </>
   );
 }
