@@ -4,7 +4,7 @@ import Head from 'next/head';
 // Base end
 
 // MUI
-import { ThemeProvider } from '@mui/material';
+import { CssBaseline, ThemeProvider } from '@mui/material';
 // MUI END
 
 // Own Components
@@ -23,6 +23,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
         <title>Welcome to nubimetrics!</title>
       </Head>
       <ThemeProvider theme={theme}>
+        <CssBaseline />
         <main className="app">
           <Layout>
             <Component {...pageProps} />
