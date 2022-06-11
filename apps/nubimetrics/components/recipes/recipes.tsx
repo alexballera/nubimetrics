@@ -25,7 +25,7 @@ import { getRecipes } from 'services/recipe.service';
 
 // Styles
 import { recipesStyles } from './recipes.module';
-import IOSSwitch from 'components/ios-switch/ios-switch';
+import IOSSwitch from 'components/common/ios-switch/ios-switch';
 // Styles end
 
 const StiledRating = styled(Rating)(
@@ -57,15 +57,19 @@ export function Recipes() {
   };
 
   useEffect(() => {
+    getAllRecipes();
+  }, []);
+
+  function getAllRecipes() {
     setLoading(true);
     getRecipes()
       .then((res) => {
-        const recipes = res.data.recipes;
-        setRecipes(recipes);
+        const { data } = res;
+        setRecipes(data.recipes);
       })
       .catch((err) => console.error(err))
       .finally(() => setLoading(false));
-  }, []);
+  }
 
   return (
     <TableContainer>

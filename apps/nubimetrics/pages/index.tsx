@@ -1,3 +1,7 @@
+// Base
+import { useState } from 'react';
+// Base end
+
 // MUI
 import {
   Box,
@@ -13,11 +17,10 @@ import CloseIcon from '@mui/icons-material/Close';
 // MUI end
 
 // Own components
-import CustomTextField from 'components/custom-text-field/custom-text-field';
+import CustomTextField from 'components/common/custom-text-field/custom-text-field';
 import Recipes from 'components/recipes/recipes';
-import SelectRadioButton from 'components/select-radio-button/select-radio-button';
-import { useState } from 'react';
-import Title from 'components/title/title';
+import SelectRadioButton from 'components/common/select-radio-button/select-radio-button';
+import Title from 'components/common/title/title';
 import NewRecipe from 'components/new-recipe/new-recipe';
 // Own components end
 
@@ -59,7 +62,7 @@ export function Index(): JSX.Element {
   const handleClose = () => setOpen(false);
   return (
     <>
-      <Title text="Recetas de Cocina" type="sectionTitle" />
+      <Title text="Recetas de Cocina" type="title" />
       <Grid mt={1} mb={1} container spacing={2} alignItems="center">
         <Grid item xs={12} md={5.5}>
           <CustomTextField type="search" size="small" placeholder="Buscador" />

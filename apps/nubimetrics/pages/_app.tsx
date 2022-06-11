@@ -8,7 +8,7 @@ import { CssBaseline, ThemeProvider } from '@mui/material';
 // MUI END
 
 // Own Components
-import Layout from '../components/layout/layout';
+import Layout from '../components/common/layout/layout';
 // Own Components end
 
 // Styles
