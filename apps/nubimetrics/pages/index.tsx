@@ -4,12 +4,14 @@ import {
   Button,
   Fab,
   Grid,
+  IconButton,
   Modal,
   styled,
   Tooltip,
   Typography,
 } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
+import CloseIcon from '@mui/icons-material/Close';
 // MUI end
 
 // Own components
@@ -17,22 +19,29 @@ import CustomTextField from 'components/custom-text-field/custom-text-field';
 import Recipes from 'components/recipes/recipes';
 import SelectRadioButton from 'components/select-radio-button/select-radio-button';
 import { useState } from 'react';
+import Title from 'components/title/title';
+import NewRecipe from 'components/new-recipe/new-recipe';
 // Own components end
 
-const styles = {
+export const styles = {
   fab: {
     position: 'absolute',
     bottom: 24,
     right: 48,
   },
-  modalContent: {
+  modalContainer: {
     position: 'absolute',
     top: 0,
     right: 0,
     width: 464,
     bgcolor: 'background.paper',
     height: '100vh',
-    p: 4,
+    p: 3,
+  },
+  iconButton: {
+    position: 'absolute',
+    right: 20,
+    top: 20,
   },
 };
 
@@ -52,13 +61,7 @@ export function Index(): JSX.Element {
   const handleClose = () => setOpen(false);
   return (
     <>
-      <Typography
-        component="h2"
-        variant="h2"
-        sx={{ fontWeight: 600, fontSize: 32, lineHeight: '48px' }}
-      >
-        Recetas de Cocina
-      </Typography>
+      <Title text="Recetas de Cocina" type="sectionTitle" />
       <Grid mt={1} mb={1} container spacing={2} alignItems="center">
         <Grid item xs={12} md={5.5}>
           <CustomTextField type="search" size="small" placeholder="Buscador" />
@@ -81,21 +84,24 @@ export function Index(): JSX.Element {
           <AddIcon />
         </StiledFab>
       </Tooltip>
-
+      {/* TODO crear componente reutilizable para el modal */}
       <Modal
         open={open}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={styles.modalContent}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Text in a modal
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-          </Typography>
+        <Box sx={styles.modalContainer}>
+          <IconButton
+            aria-label="delete"
+            sx={styles.iconButton}
+            onClick={handleClose}
+          >
+            <CloseIcon />
+          </IconButton>
 
-          <Button onClick={handleClose}> cerrar</Button>
+          <Title text="Nueva receta" type="modal" />
+
+          <NewRecipe />
         </Box>
       </Modal>
     </>
