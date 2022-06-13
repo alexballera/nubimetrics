@@ -12,22 +12,7 @@ import { CustomModalProps } from 'types/modal';
 // Types end
 
 // Styles
-const styles = {
-  modalContainer: {
-    position: 'absolute',
-    top: 0,
-    right: 0,
-    width: 464,
-    bgcolor: 'background.paper',
-    height: '100vh',
-    p: 3,
-  },
-  iconButton: {
-    position: 'absolute',
-    right: 20,
-    top: 20,
-  },
-};
+import { styles } from './custom-modal.module';
 // Styles end
 
 export function CustomModal({

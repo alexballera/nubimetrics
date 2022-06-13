@@ -11,12 +11,12 @@ import StarIcon from '@mui/icons-material/Star';
 import Title from 'components/common/title/title';
 import IOSSwitch from 'components/common/ios-switch/ios-switch';
 import CustomRatings from 'components/common/custom-ratings/custom-ratings';
+import CustomModal from 'components/common/custom-modal/custom-modal';
+import NewRecipe from 'components/new-recipe/new-recipe';
 // Own components end
 
 // Styles
 import { styles } from 'components/new-recipe/new-recipe.module';
-import CustomModal from 'components/common/custom-modal/custom-modal';
-import NewRecipe from 'components/new-recipe/new-recipe';
 // Styles end
 
 // Types
@@ -30,6 +30,7 @@ export function DetailRecipe({ recipe }: RecipeProps) {
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setChecked(event.target.checked);
+    console.log(checked);
   };
   return (
     <>
@@ -44,17 +45,9 @@ export function DetailRecipe({ recipe }: RecipeProps) {
           <Box py={1}>
             <Title type="label" text="Ingredientes" />
             <Box pt={2}>
-              <ul style={{ margin: 0, paddingLeft: 16 }}>
+              <ul style={styles.ul}>
                 {recipe.ingredients.map((item: string, key) => (
-                  <li
-                    style={{
-                      fontFamily: 'Poppins',
-                      fontWeight: 400,
-                      fontSize: 14,
-                      lineHeight: '24px',
-                    }}
-                    key={key}
-                  >
+                  <li style={styles.li} key={key}>
                     {item}
                   </li>
                 ))}

@@ -1,6 +1,23 @@
-
-
 # Nubimetrics
+
+El proyecto se generó utilizando [Nx](https://nx.dev), más abajo está
+el documento y detalles.
+
+Las tecnologías utilizadas son: Nextjs (React), Material UI, Nx, Typescript,
+Axios los estilos se manejan desde archivos tsx o dentro del mismo componente
+según la complejidad del mismo.
+
+Se realizó el maquetado segú el diseño de UX, una vez instalada las dependencias
+con `npm i` el proyecto se corre ejecutando el comando `npm start`.
+
+Se realizó una sola vista ubicada en el index de la carpeta pages, el resto de las
+vistas son modales de formularios y el detalle de la receta.
+
+Los datos están mockeados en la carpeta public mediante un archivo `json`, además
+se creó un servicio que con `axios` se consumen estos datos y se llama de los
+respectivos componentes para mostrar los datos.
+
+============================================================================================
 
 This project was generated using [Nx](https://nx.dev).
 
@@ -78,8 +95,6 @@ Run `nx graph` to see a diagram of the dependencies of your projects.
 ## Further help
 
 Visit the [Nx Documentation](https://nx.dev) to learn more.
-
-
 
 ## ☁ Nx Cloud
 

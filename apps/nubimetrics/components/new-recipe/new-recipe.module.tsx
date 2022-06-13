@@ -58,6 +58,13 @@ export const styles = {
     width: '100%',
     bgcolor: 'background.paper',
   },
+  ul: { margin: 0, paddingLeft: 16 },
+  li: {
+    fontFamily: 'Poppins',
+    fontWeight: 400,
+    fontSize: 14,
+    lineHeight: '24px',
+  },
   liNumber: {
     fontWeight: 400,
     fontSize: 12,
