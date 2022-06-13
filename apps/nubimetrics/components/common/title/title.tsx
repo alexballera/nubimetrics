@@ -1,7 +1,7 @@
 import { Typography } from '@mui/material';
 
 export interface TitleProps {
-  type: string;
+  type: 'modal' | 'title' | 'label';
   text: string;
 }
 
@@ -19,12 +19,18 @@ export function Title(props: TitleProps) {
       fontSize: 32,
       lineHeight: '48px',
     },
+    label: {
+      fontWeight: 600,
+      fontSize: 14,
+      lineHeight: '24px',
+    },
   };
 
   function getStyle() {
     const style = {
       modal: styles.modal,
       title: styles.title,
+      label: styles.label,
       default: null,
     };
     return style[type] || style['default'];

@@ -9,7 +9,7 @@ export interface CustomTextFieldProps {
   type: string;
 }
 
-const OwnTextField = styled(TextField)({
+const StyledTextField = styled(TextField)({
   '& .MuiFilledInput-root': {
     borderRadius: 16,
     backgroundColor: '#F9F9F9',
@@ -39,7 +39,7 @@ const OwnTextField = styled(TextField)({
 export function CustomTextField(props: CustomTextFieldProps) {
   const { placeholder, size, type } = props;
   return (
-    <OwnTextField
+    <StyledTextField
       placeholder={placeholder}
       size={size}
       fullWidth

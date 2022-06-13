@@ -59,7 +59,7 @@ export function CustomModal(props: CustomModalProps) {
 
         <Title text={title} type="modal" />
 
-        {content}
+        <Box py={2}>{content}</Box>
       </Box>
     </Modal>
   );
