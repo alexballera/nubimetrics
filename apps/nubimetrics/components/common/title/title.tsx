@@ -1,7 +1,7 @@
 import { Typography } from '@mui/material';
 
 export interface TitleProps {
-  type: 'modal' | 'title' | 'label';
+  type: 'modal' | 'title' | 'label' | 'paragraph';
   text: string;
 }
 
@@ -24,6 +24,13 @@ export function Title(props: TitleProps) {
       fontSize: 14,
       lineHeight: '24px',
     },
+    paragraph: {
+      fontWeight: 400,
+      fontSize: 14,
+      lineHeight: '24px',
+      marginTop: 1,
+      marginBottom: 1,
+    },
   };
 
   function getStyle() {
@@ -31,6 +38,7 @@ export function Title(props: TitleProps) {
       modal: styles.modal,
       title: styles.title,
       label: styles.label,
+      paragraph: styles.paragraph,
       default: null,
     };
     return style[type] || style['default'];
@@ -39,8 +47,8 @@ export function Title(props: TitleProps) {
   return (
     <Typography
       id="modal-modal-title"
-      variant="h2"
-      component="h2"
+      variant={type === 'paragraph' ? 'body1' : 'h2'}
+      component={type === 'paragraph' ? 'p' : 'h2'}
       sx={getStyle}
     >
       {text}
