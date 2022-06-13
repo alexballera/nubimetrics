@@ -1,5 +1,5 @@
 // Base
-import { ChangeEvent, useEffect, useState } from 'react';
+import { ChangeEvent, useContext, useEffect, useState } from 'react';
 // Base End
 
 // MUI
@@ -22,9 +22,9 @@ import { CustomModal as Modal } from 'components/common/custom-modal/custom-moda
 import CustomRatings from 'components/common/custom-ratings/custom-ratings';
 // Own components end
 
-// Services
-import { getRecipes } from 'services/recipe.service';
-// Services end
+// Context
+import { RecipesContext } from 'context/RecipesContext';
+// Context end
 
 // Styles
 import { recipesStyles } from './recipes.module';
@@ -41,13 +41,11 @@ export interface RecipesProps {
 }
 
 export function Recipes() {
-  const [recipes, setRecipes] = useState<RecipesProps[]>();
   const [recipe, setRecipe] = useState<RecipesProps>();
-  const [loading, setLoading] = useState<boolean>();
   const [checked, setChecked] = useState(true);
   const [open, setOpen] = useState(false);
 
-  const handleOpen = (recipe) => {
+  const handleOpen = (recipe: RecipesProps) => {
     setRecipe(recipe);
     setOpen(true);
   };
@@ -56,21 +54,7 @@ export function Recipes() {
     setChecked(!event.target.checked);
     console.log(checked);
   };
-
-  useEffect(() => {
-    getAllRecipes();
-  }, []);
-
-  function getAllRecipes() {
-    setLoading(true);
-    getRecipes()
-      .then((res) => {
-        const { data } = res;
-        setRecipes(data.recipes);
-      })
-      .catch((err) => console.error(err))
-      .finally(() => setLoading(false));
-  }
+  const { loading, recipes } = useContext(RecipesContext);
 
   return (
     <>

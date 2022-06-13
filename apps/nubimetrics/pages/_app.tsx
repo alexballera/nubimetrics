@@ -14,6 +14,7 @@ import Layout from '../components/common/layout/layout';
 // Styles
 import theme from '../styles/ts/theme';
 import './styles.css';
+import { RecipesProvider } from 'context/RecipesProvider';
 // Styles end
 
 function CustomApp({ Component, pageProps }: AppProps) {
@@ -23,12 +24,14 @@ function CustomApp({ Component, pageProps }: AppProps) {
         <title>Welcome to nubimetrics!</title>
       </Head>
       <ThemeProvider theme={theme}>
+        <RecipesProvider>
+          <main className="app">
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+          </main>
+        </RecipesProvider>
         <CssBaseline />
-        <main className="app">
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        </main>
       </ThemeProvider>
     </>
   );
