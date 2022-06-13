@@ -7,6 +7,10 @@ import CloseIcon from '@mui/icons-material/Close';
 import Title from '../title/title';
 // Own components end
 
+// Types
+import { CustomModalProps } from 'types/modal';
+// Types end
+
 // Styles
 const styles = {
   modalContainer: {
@@ -26,18 +30,13 @@ const styles = {
 };
 // Styles end
 
-// Types
-export interface CustomModalProps {
-  content: React.ReactElement;
-  open: boolean;
-  setOpen: (a: boolean) => void;
-  title: string;
-}
-// Types end
-
-export function CustomModal(props: CustomModalProps) {
-  const { open, setOpen, content, title } = props;
-
+export function CustomModal({
+  open,
+  setOpen,
+  content,
+  title,
+  hideBackdrop,
+}: CustomModalProps) {
   const handleClose = () => {
     setOpen(false);
   };
@@ -45,6 +44,7 @@ export function CustomModal(props: CustomModalProps) {
   return (
     <Modal
       open={open}
+      hideBackdrop={hideBackdrop}
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
     >

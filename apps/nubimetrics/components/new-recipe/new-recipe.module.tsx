@@ -45,7 +45,7 @@ export const StyledTextField = styled(TextField)({
 });
 
 export const styles = {
-  container: { height: 490, overflowY: 'auto' },
+  container: { height: 460, overflowY: 'auto' },
   styledTextField: {
     '& .MuiFilledInput-root': { height: 38 },
     '& .MuiFilledInput-input': { height: 38, padding: 0 },
@@ -75,7 +75,6 @@ export const styles = {
   button: {
     '& .MuiButton-root': {
       borderRadius: 25,
-      color: 'white',
     },
   },
 };

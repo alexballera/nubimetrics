@@ -12,6 +12,13 @@ export const logoWidth = 116
 // Variables end
 
 const defaultTheme: ThemeOptions = {
+  palette: {
+    primary: {
+      light: '#0cb1b7',
+      main: '#0C969D',
+      dark: '#078084',
+    },
+  },
   typography: {
     fontFamily: poppinsFontFamily
   },
