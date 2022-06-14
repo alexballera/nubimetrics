@@ -45,6 +45,7 @@ export function Recipes() {
   const [checked, setChecked] = useState(true);
   const [open, setOpen] = useState(false);
 
+  // Ejemplo de context
   const { loading, recipes } = useContext(RecipesContext);
 
   const handleOpen = (recipe: RecipesProps) => {

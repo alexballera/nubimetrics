@@ -28,7 +28,7 @@ export const RecipesProvider = ({ children }) => {
       .finally(() => setLoading(false));
   }
   return (
-    <RecipesContext.Provider value={{ loading, recipes }}>
+    <RecipesContext.Provider value={{ loading, recipes, setRecipes }}>
       {children}
     </RecipesContext.Provider>
   );

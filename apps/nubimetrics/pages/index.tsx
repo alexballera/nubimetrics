@@ -14,6 +14,7 @@ import SelectRadioButton from 'components/common/select-radio-button/select-radi
 import Title from 'components/common/title/title';
 import { CustomModal as Modal } from 'components/common/custom-modal/custom-modal';
 import NewRecipe from 'components/new-recipe/new-recipe';
+import { useCounter } from 'hooks/useCounter';
 // Own components end
 
 const styles = {
@@ -26,7 +27,14 @@ const styles = {
 
 export function Index(): JSX.Element {
   const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
+  const { counter, increment } = useCounter();
+
+  const handleOpen = () => {
+    setOpen(true);
+    // Ejemplo de custom hook
+    increment();
+    console.log(counter);
+  };
 
   return (
     <>
