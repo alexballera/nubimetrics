@@ -3,7 +3,7 @@ import { useState } from 'react';
 // Base end
 
 // MUI
-import { Fab, Grid, styled, Tooltip } from '@mui/material';
+import { Fab, Grid, Tooltip } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 // MUI end
 
@@ -23,16 +23,6 @@ const styles = {
     right: 48,
   },
 };
-
-const StiledFab = styled(Fab)(
-  () => `
-  background-color: #0C969D;
-  :hover {
-    background-color: #0C969D;
-    filter: brightness(0.85);
-  }
-  `
-);
 
 export function Index(): JSX.Element {
   const [open, setOpen] = useState(false);
@@ -54,14 +44,14 @@ export function Index(): JSX.Element {
         </Grid>
       </Grid>
       <Tooltip title="Añadir receta" placement="left" arrow>
-        <StiledFab
+        <Fab
           sx={styles.fab}
           color="primary"
           aria-label="add"
           onClick={handleOpen}
         >
           <AddIcon />
-        </StiledFab>
+        </Fab>
       </Tooltip>
 
       <Modal
