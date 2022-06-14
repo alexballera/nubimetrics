@@ -24,6 +24,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
         <title>Welcome to nubimetrics!</title>
       </Head>
       <ThemeProvider theme={theme}>
+        <CssBaseline />
         <RecipesProvider>
           <main className="app">
             <Layout>
@@ -31,7 +32,6 @@ function CustomApp({ Component, pageProps }: AppProps) {
             </Layout>
           </main>
         </RecipesProvider>
-        <CssBaseline />
       </ThemeProvider>
     </>
   );

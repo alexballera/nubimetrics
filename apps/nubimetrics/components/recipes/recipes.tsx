@@ -1,5 +1,5 @@
 // Base
-import { ChangeEvent, useContext, useEffect, useState } from 'react';
+import { ChangeEvent, useContext, useState } from 'react';
 // Base End
 
 // MUI
@@ -45,6 +45,8 @@ export function Recipes() {
   const [checked, setChecked] = useState(true);
   const [open, setOpen] = useState(false);
 
+  const { loading, recipes } = useContext(RecipesContext);
+
   const handleOpen = (recipe: RecipesProps) => {
     setRecipe(recipe);
     setOpen(true);
@@ -54,7 +56,6 @@ export function Recipes() {
     setChecked(!event.target.checked);
     console.log(checked);
   };
-  const { loading, recipes } = useContext(RecipesContext);
 
   return (
     <>
