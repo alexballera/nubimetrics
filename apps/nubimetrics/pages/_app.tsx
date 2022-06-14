@@ -11,10 +11,13 @@ import { CssBaseline, ThemeProvider } from '@mui/material';
 import Layout from '../components/common/layout/layout';
 // Own Components end
 
+// Context
+import { RecipesProvider } from 'context/RecipesProvider';
+// Context end
+
 // Styles
 import theme from '../styles/ts/theme';
 import './styles.css';
-import { RecipesProvider } from 'context/RecipesProvider';
 // Styles end
 
 function CustomApp({ Component, pageProps }: AppProps) {
